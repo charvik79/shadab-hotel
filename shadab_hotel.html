@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Shadab – Authentic Hyderabadi Cuisine Since 1953</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --crimson: #8B1A1A;
+    --deep-crimson: #5C0E0E;
+    --gold: #C9953A;
+    --gold-light: #E8B96A;
+    --cream: #F5EDD8;
+    --warm-white: #FAF6EE;
+    --dark: #1A0A00;
+    --text-body: #3A1F0A;
+    --text-muted: #7A5C3A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Cormorant Garamond', serif;
+    background: var(--warm-white);
+    color: var(--text-body);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 60px;
+    background: rgba(26,10,0,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201,149,58,0.3);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 900;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+  }
+  .nav-logo span { color: var(--cream); font-style: italic; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    color: rgba(245,237,216,0.75);
+    text-decoration: none; font-size: 0.95rem;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    font-family: 'Libre Baskerville', serif;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+
+
+  .btn-order {
+    padding: 14px 40px;
+    background: linear-gradient(135deg, var(--gold), #a8720a);
+    color: var(--dark);
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s;
+    border: 1px solid var(--gold);
+    display: inline-block;
+  }
+  .btn-order:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,149,58,0.4); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--dark);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    text-align: center;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse at 20% 50%, rgba(139,26,26,0.4) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 30%, rgba(201,149,58,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(92,14,14,0.5) 0%, transparent 60%);
+  }
+  .hero-pattern {
+    position: absolute; inset: 0;
+    background-image: 
+      repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(201,149,58,0.03) 40px, rgba(201,149,58,0.03) 80px);
+  }
+  .hero-ornament {
+    font-size: 1.2rem; color: var(--gold); letter-spacing: 8px;
+    margin-bottom: 24px; opacity: 0.8;
+    animation: fadeInDown 1s ease forwards;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 900; line-height: 1;
+    color: var(--cream);
+    animation: fadeInUp 1s ease 0.2s both;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: italic; color: var(--gold-light);
+    display: block; font-size: 0.6em;
+  }
+  .hero-tagline {
+    margin-top: 20px; font-size: 1.3rem;
+    color: rgba(245,237,216,0.65);
+    font-style: italic; letter-spacing: 1px;
+    animation: fadeInUp 1s ease 0.4s both;
+  }
+  .hero-divider {
+    width: 120px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 30px auto;
+    animation: fadeIn 1s ease 0.6s both;
+  }
+  .hero-info {
+    display: flex; gap: 48px; align-items: center;
+    color: rgba(245,237,216,0.6); font-size: 0.9rem;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    font-family: 'Libre Baskerville', serif;
+    animation: fadeInUp 1s ease 0.8s both;
+  }
+  .hero-info span { display: flex; align-items: center; gap: 8px; }
+  .hero-cta {
+    margin-top: 40px;
+    display: flex; gap: 20px;
+    animation: fadeInUp 1s ease 1s both;
+  }
+  .btn-primary {
+    padding: 14px 40px;
+    background: var(--crimson);
+    color: var(--cream); border: none;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.3s;
+    border: 1px solid var(--crimson);
+  }
+  .btn-primary:hover { background: var(--deep-crimson); border-color: var(--gold); }
+  .btn-outline {
+    padding: 14px 40px;
+    background: transparent;
+    color: var(--gold-light);
+    border: 1px solid var(--gold);
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-outline:hover { background: rgba(201,149,58,0.1); }
+
+  .scroll-indicator {
+    position: absolute; bottom: 30px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: rgba(245,237,216,0.4); font-size: 0.7rem; letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+  .scroll-arrow { width: 20px; height: 20px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg); }
+
+  /* ABOUT */
+  .about {
+    padding: 120px 60px;
+    background: var(--cream);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .about-text { }
+  .section-label {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700; line-height: 1.2;
+    color: var(--deep-crimson);
+    margin-bottom: 24px;
+  }
+  .section-title em { font-style: italic; color: var(--crimson); }
+  .about-body {
+    font-size: 1.15rem; line-height: 1.9;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+  .about-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    border-top: 1px solid rgba(201,149,58,0.3);
+    padding-top: 32px;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; font-weight: 900;
+    color: var(--crimson); display: block;
+  }
+  .stat-label {
+    font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-card {
+    background: var(--dark);
+    padding: 60px 50px; text-align: center;
+    position: relative;
+  }
+  .about-card::before {
+    content: '';
+    position: absolute; inset: 8px;
+    border: 1px solid rgba(201,149,58,0.4);
+    pointer-events: none;
+  }
+  .about-card-icon { font-size: 3.5rem; margin-bottom: 16px; }
+  .about-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; color: var(--gold-light);
+    margin-bottom: 12px;
+  }
+  .about-card p { color: rgba(245,237,216,0.6); font-style: italic; line-height: 1.8; }
+  .about-card-badge {
+    display: inline-block; margin-top: 20px;
+    padding: 8px 20px; border: 1px solid var(--gold);
+    color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  /* MENU SECTION */
+  .menu-section {
+    padding: 120px 60px;
+    background: var(--dark);
+  }
+  .menu-header {
+    text-align: center; margin-bottom: 64px;
+  }
+  .menu-header .section-title { color: var(--cream); }
+  .menu-header .section-label { color: var(--gold); }
+  .menu-subtitle {
+    font-size: 1.1rem; color: rgba(245,237,216,0.5);
+    font-style: italic;
+  }
+  .menu-tabs {
+    display: flex; justify-content: center; gap: 0;
+    margin-bottom: 48px; flex-wrap: wrap;
+  }
+  .tab {
+    padding: 12px 28px;
+    background: transparent; border: 1px solid rgba(201,149,58,0.3);
+    color: rgba(245,237,216,0.5);
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;
+    cursor: pointer; transition: all 0.3s;
+  }
+  .tab:hover, .tab.active {
+    background: var(--crimson); border-color: var(--crimson);
+    color: var(--cream);
+  }
+  .menu-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2px;
+  }
+  .menu-item {
+    background: rgba(255,255,255,0.03);
+    padding: 24px 28px;
+    border: 1px solid rgba(201,149,58,0.08);
+    display: flex; justify-content: space-between; align-items: flex-start;
+    transition: all 0.3s; cursor: default;
+  }
+  .menu-item:hover {
+    background: rgba(139,26,26,0.2);
+    border-color: rgba(201,149,58,0.25);
+  }
+  .menu-item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--cream);
+    line-height: 1.4;
+  }
+  .menu-item-tag {
+    font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-muted); margin-top: 4px;
+    font-family: 'Libre Baskerville', serif;
+  }
+  .menu-item-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700; color: var(--gold);
+    white-space: nowrap; margin-left: 16px;
+  }
+  .veg-dot { color: #4CAF50; font-size: 0.7rem; }
+  .nonveg-dot { color: #F44336; font-size: 0.7rem; }
+
+  /* BIRYANI FEATURE */
+  .biryani-feature {
+    padding: 120px 60px;
+    background: var(--crimson);
+    position: relative; overflow: hidden;
+    text-align: center;
+  }
+  .biryani-feature::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.3) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 50%, rgba(0,0,0,0.3) 0%, transparent 60%);
+  }
+  .biryani-feature-content { position: relative; }
+  .big-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-style: italic; color: var(--cream);
+    max-width: 800px; margin: 0 auto;
+    line-height: 1.5;
+  }
+  .big-quote-attr {
+    margin-top: 24px; color: rgba(245,237,216,0.6);
+    font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase;
+    font-family: 'Libre Baskerville', serif;
+  }
+  .biryani-prices {
+    display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+    margin-top: 56px;
+  }
+  .biryani-card {
+    background: rgba(0,0,0,0.25);
+    border: 1px solid rgba(245,237,216,0.2);
+    padding: 32px 36px; text-align: center;
+    min-width: 200px;
+    transition: all 0.3s;
+  }
+  .biryani-card:hover { background: rgba(0,0,0,0.4); transform: translateY(-4px); }
+  .biryani-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: var(--cream);
+    margin-bottom: 8px;
+  }
+  .biryani-card-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 900; color: var(--gold-light);
+  }
+
+  /* REVIEWS */
+  .reviews {
+    padding: 120px 60px;
+    background: var(--warm-white);
+  }
+  .reviews-header { text-align: center; margin-bottom: 64px; }
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+  }
+  .review-card {
+    background: var(--cream);
+    padding: 36px 32px;
+    border-top: 3px solid var(--gold);
+    position: relative;
+  }
+  .review-stars { color: var(--gold); font-size: 1rem; margin-bottom: 16px; }
+  .review-text {
+    font-size: 1.05rem; line-height: 1.8; color: var(--text-muted);
+    font-style: italic; margin-bottom: 20px;
+  }
+  .review-author {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.8rem; letter-spacing: 1px;
+    color: var(--crimson); font-weight: 700; text-transform: uppercase;
+  }
+  .review-role { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+
+  /* CONTACT / INFO */
+  .contact {
+    padding: 120px 60px;
+    background: var(--dark);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  }
+  .contact-info .section-title { color: var(--cream); }
+  .contact-info .section-label { color: var(--gold); }
+  .contact-details { margin-top: 40px; display: flex; flex-direction: column; gap: 28px; }
+  .contact-item {
+    display: flex; gap: 20px; align-items: flex-start;
+  }
+  .contact-icon {
+    width: 48px; height: 48px;
+    border: 1px solid rgba(201,149,58,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0;
+    color: var(--gold);
+  }
+  .contact-text-label {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 4px;
+  }
+  .contact-text-value {
+    font-size: 1.05rem; color: var(--cream); line-height: 1.6;
+  }
+  .contact-map {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,149,58,0.2);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 20px;
+    padding: 48px;
+    text-align: center;
+  }
+  .contact-map h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+  .contact-map p { color: rgba(245,237,216,0.5); font-style: italic; }
+  .map-embed {
+    width: 100%; height: 300px; border: 0;
+    filter: grayscale(30%) sepia(20%);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--deep-crimson);
+    padding: 40px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(201,149,58,0.3);
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 900; color: var(--gold-light);
+  }
+  .footer-copy { font-size: 0.8rem; color: rgba(245,237,216,0.4); font-style: italic; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a {
+    color: rgba(245,237,216,0.5); text-decoration: none;
+    font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase;
+    font-family: 'Libre Baskerville', serif;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  /* MENU CATEGORY PANEL */
+  .menu-panel { display: none; }
+  .menu-panel.active { display: contents; }
+
+  /* ANIMATIONS */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 3rem; }
+    .hero-info { flex-direction: column; gap: 16px; }
+    .hero-cta { flex-direction: column; align-items: center; }
+    .about, .contact { grid-template-columns: 1fr; gap: 48px; }
+    .menu-section, .about, .biryani-feature, .reviews, .contact { padding: 80px 24px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    .about-stats { grid-template-columns: repeat(3,1fr); }
+  }
+
+  .reserve-btn {
+    width: 100%; padding: 16px; background: var(--crimson);
+    border: 1px solid var(--crimson); color: var(--cream); cursor: pointer;
+    font-family: 'Libre Baskerville', serif; font-size: 0.85rem;
+    letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s; margin-top: 8px;
+  }
+  .reserve-btn:hover { background: var(--deep-crimson); border-color: var(--gold); }
+  .reserve-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  #reservation-success {
+    display: none; position: absolute; inset: 0; background: var(--dark);
+    align-items: center; justify-content: center; flex-direction: column;
+    gap: 16px; text-align: center; z-index: 10; padding: 40px;
+  }
+  .success-icon { font-size: 3rem; }
+  .success-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold-light); }
+  .success-msg { color: rgba(245,237,216,0.6); font-style: italic; line-height: 1.7; }
+  .success-close {
+    margin-top: 12px; padding: 10px 28px; background: transparent;
+    border: 1px solid var(--gold); color: var(--gold-light); cursor: pointer;
+    font-family: 'Libre Baskerville', serif; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;
+  }
+  @media (max-width: 768px) {
+    .reservation-inner { grid-template-columns: 1fr; gap: 40px; }
+    .reservation-section { padding: 80px 24px; }
+    .reservation-form-wrap { padding: 32px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* DECORATIVE BORDER */
+  .ornamental-border {
+    text-align: center; padding: 12px 0;
+    color: var(--gold); font-size: 1.2rem; letter-spacing: 4px; opacity: 0.6;
+  }
+</style></head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">HOTEL <span>Shadab</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#biryani">Biryani</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#reservation">Reserve</a></li>
+    <li><a href="#contact">Visit Us</a></li>
+    <li><a href="order-online.html" style="background: var(--crimson); color: var(--cream); padding: 8px 22px; border-radius: 40px; border: 1px solid var(--crimson); transition: all 0.3s;" onmouseover="this.style.background='var(--deep-crimson)'; this.style.borderColor='var(--gold)'; this.style.color='var(--gold-light)'" onmouseout="this.style.background='var(--crimson)'; this.style.borderColor='var(--crimson)'; this.style.color='var(--cream)'">🍽️ Order Online</a></li>
+  </ul>
+  </nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div style="position:relative; z-index:1;">
+    <div class="hero-ornament">✦ &nbsp;&nbsp; EST. 1953 &nbsp;&nbsp; ✦</div>
+    <h1>HOTEL<em>Shadab</em></h1>
+    <p class="hero-tagline">The Soul of Hyderabadi Cuisine, Served for Generations</p>
+    <div class="hero-divider"></div>
+    <div class="hero-info">
+      <span>⏰ Open till 12 AM</span>
+      <span style="color:rgba(201,149,58,0.4)">|</span>
+      <span>📍 Near Charminar, Hyderabad</span>
+      <span style="color:rgba(201,149,58,0.4)">|</span>
+      <span>💰 ₹200–400 per person</span>
+    </div>
+    <div class="hero-cta">
+      <a href="order.html" class="btn-order">🛒 Order Online</a>
+      <a href="#menu" class="btn-primary">Explore Menu</a>
+      <a href="#contact" class="btn-outline">Get Directions</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+<!-- RESERVATION SECTION - NEAT & CLEAN -->
+<section class="reservation-section" id="reservation">
+  <div class="reservation-container">
+    <div class="reservation-header">
+      <div class="reservation-label">✦ Reserve Your Table ✦</div>
+      <h2 class="reservation-title">Book a Table at <span>Hotel Shadab</span></h2>
+      <p class="reservation-desc">Choose your preferred dining experience — Ground floor or 3rd floor AC premium section</p>
+    </div>
+
+    <div class="reservation-form-container">
+      <form id="reservationForm" class="reservation-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>📅 Date</label>
+            <input type="date" id="resDate" class="reservation-input" required>
+          </div>
+          <div class="form-group">
+            <label>⏰ Time</label>
+            <select id="resTime" class="reservation-input" required>
+              <option value="">Select Time</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="12:30 PM">12:30 PM</option>
+              <option value="1:00 PM">1:00 PM</option>
+              <option value="1:30 PM">1:30 PM</option>
+              <option value="7:00 PM">7:00 PM</option>
+              <option value="7:30 PM">7:30 PM</option>
+              <option value="8:00 PM">8:00 PM</option>
+              <option value="8:30 PM">8:30 PM</option>
+              <option value="9:00 PM">9:00 PM</option>
+              <option value="9:30 PM">9:30 PM</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>👥 Guests</label>
+            <select id="resGuests" class="reservation-input" required>
+              <option value="">Number of Guests</option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5 Guests</option>
+              <option value="6">6 Guests</option>
+              <option value="7">7 Guests</option>
+              <option value="8">8+ Guests</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>🏢 Floor Preference</label>
+            <select id="resFloor" class="reservation-input" required>
+              <option value="">Select Floor</option>
+              <option value="Ground Floor (Street Style)">Ground Floor (Street Style)</option>
+              <option value="Third Floor AC (Premium)">Third Floor AC (Premium)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>👤 Your Name</label>
+            <input type="text" id="resName" class="reservation-input" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label>📞 Phone Number</label>
+            <input type="tel" id="resPhone" class="reservation-input" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label>📝 Special Requests (Optional)</label>
+          <textarea id="resRequests" class="reservation-textarea" rows="2" placeholder="Any allergies, special occasions, or preferences..."></textarea>
+        </div>
+
+        <button type="submit" class="reserve-submit-btn" id="confirmReservationBtn">
+          ✅ Confirm Reservation
+        </button>
+        <div id="reservationMessage" class="reservation-message"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+/* NEAT RESERVATION SECTION STYLES */
+.reservation-section {
+  background: linear-gradient(135deg, #FFF8F0, #FEF5EA);
+  padding: 60px 48px;
+  margin: 0;
+  border-top: 1px solid rgba(201,149,58,0.15);
+  border-bottom: 1px solid rgba(201,149,58,0.15);
+}
+
+.reservation-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.reservation-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.reservation-label {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.7rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C9953A;
+  margin-bottom: 12px;
+}
+
+.reservation-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #5C0E0E;
+  margin-bottom: 12px;
+}
+
+.reservation-title span {
+  color: #8B1A1A;
+  font-style: italic;
+}
+
+.reservation-desc {
+  color: #7A5C3A;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.reservation-form-container {
+  background: white;
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid rgba(201,149,58,0.2);
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-group label {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #7A5C3A;
+  font-weight: 600;
+}
+
+.reservation-input,
+.reservation-textarea {
+  padding: 14px 18px;
+  border: 1.5px solid #E8DCC8;
+  border-radius: 60px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  background: #FAF6EE;
+}
+
+.reservation-textarea {
+  border-radius: 24px;
+  resize: vertical;
+  font-family: 'Inter', sans-serif;
+}
+
+.reservation-input:focus,
+.reservation-textarea:focus {
+  outline: none;
+  border-color: #8B1A1A;
+  box-shadow: 0 0 0 3px rgba(139,26,26,0.1);
+  background: white;
+}
+
+.reserve-submit-btn {
+  background: #8B1A1A;
+  color: #F5EDD8;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 60px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.reserve-submit-btn:hover {
+  background: #5C0E0E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139,26,26,0.3);
+}
+
+.reservation-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .reservation-section {
+    padding: 48px 24px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+  .reservation-form-container {
+    padding: 28px 20px;
+  }
+  .reservation-title {
+    font-size: 1.8rem;
+  }
+}
+</style>
+
+<script>
+// Set minimum date to today
+const dateInput = document.getElementById('resDate');
+if (dateInput) {
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.setAttribute('min', today);
+  dateInput.value = today;
+}
+
+// Reservation form submission
+document.getElementById('confirmReservationBtn')?.addEventListener('click', function(e) {
+  e.preventDefault();
+  
+  const date = document.getElementById('resDate')?.value;
+  const time = document.getElementById('resTime')?.value;
+  const guests = document.getElementById('resGuests')?.value;
+  const floor = document.getElementById('resFloor')?.value;
+  const name = document.getElementById('resName')?.value;
+  const phone = document.getElementById('resPhone')?.value;
+  const requests = document.getElementById('resRequests')?.value;
+  
+  if (!name || !phone) {
+    document.getElementById('reservationMessage').innerHTML = '<span style="color:#c62828;">⚠️ Please enter your name and phone number to complete reservation.</span>';
+    return;
+  }
+  
+  if (!time || !guests || !floor) {
+    document.getElementById('reservationMessage').innerHTML = '<span style="color:#c62828;">⚠️ Please fill all required fields.</span>';
+    return;
+  }
+  
+  document.getElementById('reservationMessage').innerHTML = `<span style="color:#2A7A3B;">✅ Table reserved for ${guests} guest(s) on ${date} at ${time} (${floor}). Reservation confirmed for ${name}. We will call you at ${phone} to confirm.</span>`;
+  
+  alert(`✅ Reservation Confirmed!\n\n${name}, you have reserved a table for ${guests} guest(s) on ${date} at ${time}.\n\nFloor: ${floor}\nWe will call you at ${phone} to confirm.\n\nWelcome to Hotel Shadab!`);
+  
+  // Clear form
+  document.getElementById('resName').value = '';
+  document.getElementById('resPhone').value = '';
+  document.getElementById('resRequests').value = '';
+  document.getElementById('resTime').value = '';
+  document.getElementById('resGuests').value = '';
+  document.getElementById('resFloor').value = '';
+  
+  // Reset date to today
+  if (dateInput) dateInput.value = new Date().toISOString().split('T')[0];
+  
+  // Clear message after 5 seconds
+  setTimeout(() => {
+    document.getElementById('reservationMessage').innerHTML = '';
+  }, 5000);
+});
+</script>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-text">
+    <div class="section-label">✦ Our Story</div>
+    <h2 class="section-title">A Culinary <em>Legend</em><br>of Old Hyderabad</h2>
+    <p class="about-body">
+      Nestled in the heart of Charminar's historic lanes, Hotel Shadab has been the definitive address for authentic Hyderabadi cuisine for over seven decades. What began as a humble eatery has grown into one of the city's most beloved culinary institutions — a place where every dish carries the weight of tradition.
+    </p>
+    <p class="about-body">
+      From our signature dum biryani slow-cooked with aromatic spices, to our legendary haleem, tender kebabs, and rich curries — every plate tells the story of Hyderabad's royal culinary heritage. We serve both street-style on the ground floor and an air-conditioned dining experience above.
+    </p>
+    <div class="about-stats">
+      <div class="stat"><span class="stat-num">70+</span><span class="stat-label">Years of Legacy</span></div>
+      <div class="stat"><span class="stat-num">100+</span><span class="stat-label">Dishes on Menu</span></div>
+      <div class="stat"><span class="stat-num">★ 4.3</span><span class="stat-label">Google Rating</span></div>
+    </div>
+  </div>
+  <div class="about-visual">
+    <div class="about-card">
+      <div class="about-card-icon">🍛</div>
+      <h3>Dum Pukht Biryani</h3>
+      <p>Slow-cooked in the ancient dum style, sealed with dough, our biryani is a symphony of fragrant basmati rice, tender meat, and hand-ground spices. An experience, not just a meal.</p>
+      <div class="about-card-badge">Hyderabad's Finest</div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="menu-header">
+    <div class="section-label">✦ Our Offerings</div>
+    <h2 class="section-title">The <em>Menu</em></h2>
+    <p class="menu-subtitle">A rich selection of Hyderabadi classics, grills, and Indo-Chinese specialties</p>
+  </div>
+
+  <div class="menu-tabs">
+    <button class="tab active" onclick="showTab('starters')">Starters</button>
+    <button class="tab" onclick="showTab('biryani-menu')">Biryani</button>
+    <button class="tab" onclick="showTab('kebabs')">Kebabs</button>
+    <button class="tab" onclick="showTab('curries')">Curries</button>
+    <button class="tab" onclick="showTab('seafood')">Seafood</button>
+    <button class="tab" onclick="showTab('rice')">Rice & Noodles</button>
+    <button class="tab" onclick="showTab('breads')">Breads & Salads</button>
+    <button class="tab" onclick="showTab('desserts')">Desserts & Drinks</button>
+  </div>
+
+  <div class="menu-grid" id="menu-grid"></div>
+</section>
+
+<!-- BIRYANI FEATURE -->
+<section class="biryani-feature" id="biryani">
+  <div class="biryani-feature-content">
+    <div class="ornamental-border">✦ ✦ ✦</div>
+    <p class="big-quote">"Finally visiting Hotel Shadab felt less like a simple meal and more like the culmination of a lifelong culinary pilgrimage."</p>
+    <p class="big-quote-attr">— Google Review, Mukul Banerjee</p>
+    <div class="biryani-prices">
+      <div class="biryani-card"><div class="biryani-card-name">Veg Biryani</div><div class="biryani-card-price">₹265</div></div>
+      <div class="biryani-card"><div class="biryani-card-name">Chicken Biryani</div><div class="biryani-card-price">₹385</div></div>
+      <div class="biryani-card"><div class="biryani-card-name">Shadab Special Chicken (Boneless)</div><div class="biryani-card-price">₹455</div></div>
+      <div class="biryani-card"><div class="biryani-card-name">Mutton Biryani (Hyd Dum)</div><div class="biryani-card-price">₹435</div></div>
+      <div class="biryani-card"><div class="biryani-card-name">Shadab Special Mutton (Boneless)</div><div class="biryani-card-price">₹545</div></div>
+      <div class="biryani-card"><div class="biryani-card-name">Chicken Family Pack</div><div class="biryani-card-price">₹1140</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-header">
+    <div class="section-label">✦ What Guests Say</div>
+    <h2 class="section-title">Stories from <em>Our Table</em></h2>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"The biryani is rich, aromatic, perfectly spiced, and cooked to absolute perfection — exactly what authentic Hyderabadi biryani should taste like."</p>
+      <div class="review-author">Shaista Suleman</div>
+      <div class="review-role">Local Guide · 315 Reviews</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Hotel Shadab, located near the iconic Charminar, is truly one of Hyderabad's culinary legends. One of those rare places that has maintained the same incredible taste for years."</p>
+      <div class="review-author">Zubair Mohammed Iftekhar</div>
+      <div class="review-role">Local Guide · 187 Reviews</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"The restaurant offers authentic Hyderabadi cuisine with more than 35 years of experience. One can choose between street food style downstairs or the upper floor with comfortable AC seating."</p>
+      <div class="review-author">Alexander Wacker</div>
+      <div class="review-role">Local Guide · 157 Reviews</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Both biryanis were rich in flavor, well-cooked, and very satisfying. The taste was absolutely fabulous. Highly recommend for anyone visiting Hyderabad."</p>
+      <div class="review-author">MIB Educational</div>
+      <div class="review-role">Verified Guest</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Had mutton ghee roast — very delicious. Then hand murgh sholay which were equally good. No matter when you go you will have to wait, and it's always busy, especially in the AC section."</p>
+      <div class="review-author">A Mohammed</div>
+      <div class="review-role">Local Guide · 210 Reviews</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <p class="review-text">"Old Hyderabad cravings led straight to Shadab Hotel. The Old City ambiance, the flavours — it's a complete experience that takes you back to the roots of Hyderabadi food culture."</p>
+      <div class="review-author">S Jayanti</div>
+      <div class="review-role">Local Guide · 76 Reviews</div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section class="reservation-section" id="reservation">
+  <div class="reservation-inner">
+    <div class="reservation-left">
+      <div class="section-label">✦ Book Your Table</div>
+      <h2 class="section-title">Make a <em>Reservation</em></h2>
+      <p class="about-body">Reserve your table at Hotel Shadab and experience the finest of Hyderabadi dining. Our team will call you within a few hours to confirm.</p>
+      <div class="res-perks">
+        <div class="res-perk">
+          <div class="res-perk-icon">🍽️</div>
+          <div class="res-perk-text"><span class="res-perk-title">AC Dining Available</span>Comfortable air-conditioned experience on our upper floors with dedicated seating.</div>
+        </div>
+        <div class="res-perk">
+          <div class="res-perk-icon">⏰</div>
+          <div class="res-perk-text"><span class="res-perk-title">Open Till Midnight</span>Open every day — perfect for dinner anytime before 12 AM.</div>
+        </div>
+        <div class="res-perk">
+          <div class="res-perk-icon">👨‍👩‍👧‍👦</div>
+          <div class="res-perk-text"><span class="res-perk-title">Family Packs Available</span>Special biryani family packs starting at ₹1140.</div>
+        </div>
+        <div class="res-perk">
+          <div class="res-perk-icon">📞</div>
+          <div class="res-perk-text"><span class="res-perk-title">Call to Order</span><a href="tel:09642421990" style="color:var(--gold);text-decoration:none;">096424 21990</a> — or order online for delivery.</div>
+        </div>
+      </div>
+      <a href="order.html" style="display:inline-block;margin-top:28px;padding:14px 36px;background:linear-gradient(135deg,var(--gold),#a8720a);color:var(--dark);font-family:'Libre Baskerville',serif;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">🛒 Order Online Instead</a>
+    </div>
+    <div class="reservation-form-wrap">
+      <div id="reservation-success">
+        <div class="success-icon">✦</div>
+        <div class="success-title">Table Reserved!</div>
+        <p class="success-msg">Your reservation has been received. Our team will call you to confirm within a few hours. You can also reach us at <strong style="color:var(--gold-light)">096424 21990</strong>.</p>
+        <button class="success-close" onclick="document.getElementById('reservation-success').style.display='none'">Make Another</button>
+      </div>
+      
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-info">
+    <div class="section-label">✦ Find Us</div>
+    <h2 class="section-title">Visit <em>Hotel Shadab</em></h2>
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-text-label">Address</div>
+          <div class="contact-text-value">Madina Circle, 21-1-140-144,<br>High Court Road, near High Court,<br>Charminar, Ghansi Bazaar,<br>Hyderabad, Telangana 500012</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">⏰</div>
+        <div>
+          <div class="contact-text-label">Hours</div>
+          <div class="contact-text-value">Open Daily · Closes 12 AM</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-text-label">Phone</div>
+          <div class="contact-text-value"><a href="tel:09642421990" style="color:var(--gold-light);text-decoration:none;">096424 21990</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🌐</div>
+        <div>
+          <div class="contact-text-label">Website</div>
+          <div class="contact-text-value"><a href="https://shadab.ai" target="_blank" style="color:var(--gold-light);text-decoration:none;">shadab.ai</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💰</div>
+        <div>
+          <div class="contact-text-label">Budget</div>
+          <div class="contact-text-value">₹200 – ₹400 per person</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-map">
+    <iframe class="map-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.123456789!2d78.4740!3d17.3616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb979f2b15b965%3A0x4bef3e7a2afbb0e9!2sHotel%20Shadab!5e0!3m2!1sen!2sin!4v1234567890"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">HOTEL SHADAB</div>
+  <div class="footer-copy">© 2024 Hotel Shadab, Hyderabad. Authentic Since 1953.</div>
+  <div class="footer-links">
+    <a href="#about">Story</a>
+    <a href="#menu">Menu</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+const menuData = {
+  'starters': [
+    { name: 'Finger Chips', price: '₹260', type: 'veg' },
+    { name: 'Crips Veg', price: '₹260', type: 'veg' },
+    { name: 'Veg Manchuria', price: '₹260', type: 'veg' },
+    { name: 'Gobi 65', price: '₹260', type: 'veg' },
+    { name: 'Paneer 65', price: '₹280', type: 'veg' },
+    { name: 'Paneer Manchuria', price: '₹280', type: 'veg' },
+    { name: 'Gobi Manchuria', price: '₹280', type: 'veg' },
+    { name: 'Chilli Paneer', price: '₹280', type: 'veg' },
+    { name: 'Veg Burbura', price: '₹280', type: 'veg' },
+    { name: 'Honey Sesame Chilli', price: '₹280', type: 'veg' },
+    { name: 'Potato', price: '₹280', type: 'veg' },
+    { name: 'Paneer Crispy', price: '₹280', type: 'veg' },
+    { name: 'Sanghai Chicken', price: '₹380', type: 'nonveg' },
+    { name: 'Chicken 65', price: '₹380', type: 'nonveg' },
+    { name: 'Chicken 555', price: '₹390', type: 'nonveg' },
+    { name: 'Chicken Manchurian Dry', price: '₹390', type: 'nonveg' },
+    { name: 'Chilly Chicken Dry', price: '₹390', type: 'nonveg' },
+    { name: 'Chicken Dragon', price: '₹390', type: 'nonveg' },
+    { name: 'Chicken Roast (Half)', price: '₹400', type: 'nonveg' },
+    { name: 'Chicken Oyster Sauce', price: '₹395', type: 'nonveg' },
+    { name: 'Chicken Majestic', price: '₹400', type: 'nonveg' },
+    { name: 'Chicken Pepper', price: '₹400', type: 'nonveg' },
+    { name: 'Butter Garlic Chicken', price: '₹400', type: 'nonveg' },
+    { name: 'Slice Chicken Sesame Chilli', price: '₹395', type: 'nonveg' },
+    { name: 'Chicken Lollipop', price: '₹450', type: 'nonveg' },
+    { name: 'Sesame Chicken', price: '₹400', type: 'nonveg' },
+    { name: 'Coriander Chicken', price: '₹400', type: 'nonveg' },
+    { name: 'Dice Chicken Devil Sauce', price: '₹400', type: 'nonveg' },
+  ],
+  'biryani-menu': [
+    { name: 'Veg Biryani', price: '₹265', type: 'veg' },
+    { name: 'Kaju Paneer Biryani', price: '₹300', type: 'veg' },
+    { name: 'Kaju Biryani', price: '₹300', type: 'veg' },
+    { name: 'Veg Pulao', price: '₹265', type: 'veg' },
+    { name: 'Navratan Pulao', price: '₹275', type: 'veg' },
+    { name: 'Egg Biryani', price: '₹290', type: 'nonveg' },
+    { name: 'Chicken Biryani', price: '₹385', type: 'nonveg' },
+    { name: 'Shadab Special Chicken Biryani (Boneless)', price: '₹455', type: 'nonveg' },
+    { name: 'Mutton Biryani (Hyd Dum)', price: '₹435', type: 'nonveg' },
+    { name: 'Shadab Special Mutton Biryani (Boneless)', price: '₹545', type: 'nonveg' },
+    { name: 'Chicken Family Pack', price: '₹1140', type: 'nonveg' },
+    { name: 'Mutton Family Pack', price: '₹1290', type: 'nonveg' },
+    { name: 'Fish Biryani', price: '₹490', type: 'nonveg' },
+    { name: 'Prawn Biryani', price: '₹490', type: 'nonveg' },
+  ],
+  'kebabs': [
+    { name: 'Reshmi Kebab', price: '₹440', type: 'nonveg' },
+    { name: 'Alamgir Kebab', price: '₹415', type: 'nonveg' },
+    { name: 'Murgh Lasooni Kebab', price: '₹415', type: 'nonveg' },
+    { name: 'Chicken Tikka Kebab', price: '₹415', type: 'nonveg' },
+    { name: 'Kalmi Kebab (Bone)', price: '₹415', type: 'nonveg' },
+    { name: 'Tangadi Kebab (Bone)', price: '₹415', type: 'nonveg' },
+    { name: 'Malai Kebab', price: '₹430', type: 'nonveg' },
+    { name: 'Banjara Kebab', price: '₹430', type: 'nonveg' },
+    { name: 'Changezi Kebab', price: '₹440', type: 'nonveg' },
+    { name: 'Murgh Ke Sholay', price: '₹440', type: 'nonveg' },
+    { name: 'Murgh Achari Tikka', price: '₹440', type: 'nonveg' },
+    { name: 'Tandoori Chicken (Half)', price: '₹320', type: 'nonveg' },
+    { name: 'Tandoori Chicken (Full)', price: '₹520', type: 'nonveg' },
+    { name: 'Mutton Barra', price: '₹500', type: 'nonveg' },
+    { name: 'Pathar Ka Gosht', price: '₹530', type: 'nonveg' },
+    { name: 'Sheek Kebab (Mutton)', price: '₹515', type: 'nonveg' },
+    { name: 'Boti Kebab (Mutton)', price: '₹515', type: 'nonveg' },
+  ],
+  'curries': [
+    { name: 'Dal Fry', price: '₹170', type: 'veg' },
+    { name: 'Dal Tadka', price: '₹180', type: 'veg' },
+    { name: 'Vegetable Do Pyaza', price: '₹255', type: 'veg' },
+    { name: 'Aloo Palak', price: '₹255', type: 'veg' },
+    { name: 'Gobi Masala', price: '₹255', type: 'veg' },
+    { name: 'Mutter Paneer', price: '₹255', type: 'veg' },
+    { name: 'Shimla Mirch Masala', price: '₹255', type: 'veg' },
+    { name: 'Kadai Vegetable', price: '₹255', type: 'veg' },
+    { name: 'Dum Aloo', price: '₹255', type: 'veg' },
+    { name: 'Kaju Paneer', price: '₹270', type: 'veg' },
+    { name: 'Shahi Paneer', price: '₹270', type: 'veg' },
+    { name: 'Paneer Butter Masala', price: '₹270', type: 'veg' },
+    { name: 'Paneer Tikka Masala', price: '₹350', type: 'veg' },
+    { name: 'Malai Kofta', price: '₹300', type: 'veg' },
+    { name: 'Chicken Masala', price: '₹360', type: 'nonveg' },
+    { name: 'Butter Chicken', price: '₹370', type: 'nonveg' },
+    { name: 'Kadai Chicken', price: '₹370', type: 'nonveg' },
+    { name: 'Chicken Hyderabadi', price: '₹370', type: 'nonveg' },
+    { name: 'Chicken Afghani', price: '₹410', type: 'nonveg' },
+    { name: 'Murgh Musallam', price: '₹445', type: 'nonveg' },
+    { name: 'Mutton Mughlai', price: '₹480', type: 'nonveg' },
+    { name: 'Mutton Pasinda', price: '₹480', type: 'nonveg' },
+    { name: 'Kadai Gosht', price: '₹480', type: 'nonveg' },
+    { name: 'Osmania Mutton', price: '₹485', type: 'nonveg' },
+    { name: 'Kheema Josh', price: '₹485', type: 'nonveg' },
+    { name: 'Nawabi Mutton', price: '₹500', type: 'nonveg' },
+    { name: 'Baghdadi Mutton', price: '₹500', type: 'nonveg' },
+    { name: 'Ghee Raast', price: '₹435', type: 'nonveg' },
+    { name: 'Prawn Masala', price: '₹435', type: 'nonveg' },
+  ],
+  'seafood': [
+    { name: 'Fried Prawns', price: '₹430', type: 'nonveg' },
+    { name: 'Chilli Prawns', price: '₹425', type: 'nonveg' },
+    { name: 'Schezwan Prawns', price: '₹425', type: 'nonveg' },
+    { name: 'Garlic Prawns', price: '₹425', type: 'nonveg' },
+    { name: 'Ginger Prawns', price: '₹425', type: 'nonveg' },
+    { name: 'Loose Prawns', price: '₹425', type: 'nonveg' },
+    { name: 'Pepper Fish', price: '₹445', type: 'nonveg' },
+    { name: 'Fish Manchuria', price: '₹445', type: 'nonveg' },
+    { name: 'Chilli Fish', price: '₹445', type: 'nonveg' },
+    { name: 'Apollo Fish', price: '₹445', type: 'nonveg' },
+    { name: 'Fried Fish', price: '₹445', type: 'nonveg' },
+    { name: 'Fish Finger', price: '₹445', type: 'nonveg' },
+    { name: 'Fish Tikka Kebab', price: '₹460', type: 'nonveg' },
+    { name: 'Kasundi Fish Tikka', price: '₹460', type: 'nonveg' },
+    { name: 'Ajwain Fish Tikka', price: '₹460', type: 'nonveg' },
+    { name: 'Tandoori Prawns', price: '₹470', type: 'nonveg' },
+  ],
+  'rice': [
+    { name: 'Plain Rice', price: '₹160', type: 'veg' },
+    { name: 'Jeera Rice', price: '₹210', type: 'veg' },
+    { name: 'Veg Fried Rice', price: '₹220', type: 'veg' },
+    { name: 'Ginger Capsicum Fried Rice', price: '₹220', type: 'veg' },
+    { name: 'Schezwan Fried Rice', price: '₹220', type: 'veg' },
+    { name: 'Curd Rice', price: '₹220', type: 'veg' },
+    { name: 'Ghee Rice', price: '₹220', type: 'veg' },
+    { name: 'Lemon Rice', price: '₹230', type: 'veg' },
+    { name: 'Masala Rice', price: '₹230', type: 'veg' },
+    { name: 'Egg Fried Rice', price: '₹230', type: 'nonveg' },
+    { name: 'Chicken Fried Rice', price: '₹255', type: 'nonveg' },
+    { name: 'Chicken Schezwan Fried Rice', price: '₹270', type: 'nonveg' },
+    { name: 'Prawn Fried Rice', price: '₹280', type: 'nonveg' },
+    { name: 'Veg Chowmein', price: '₹235', type: 'veg' },
+    { name: 'Eggs Chowmein', price: '₹235', type: 'nonveg' },
+    { name: 'Chicken Chowmein', price: '₹255', type: 'nonveg' },
+    { name: 'Mutton Chowmein', price: '₹280', type: 'nonveg' },
+    { name: 'Prawn Chowmein', price: '₹290', type: 'nonveg' },
+  ],
+  'breads': [
+    { name: 'Tandoori Roti', price: '₹30', type: 'veg' },
+    { name: 'Rumali Roti', price: '₹35', type: 'veg' },
+    { name: 'Butter Roti', price: '₹35', type: 'veg' },
+    { name: 'Plain Naan', price: '₹50', type: 'veg' },
+    { name: 'Pudina Paratha', price: '₹70', type: 'veg' },
+    { name: 'Onion Paratha', price: '₹70', type: 'veg' },
+    { name: 'Lachha Paratha', price: '₹70', type: 'veg' },
+    { name: 'Garlic Naan', price: '₹75', type: 'veg' },
+    { name: 'Paneer Kulcha', price: '₹75', type: 'veg' },
+    { name: 'Butter Naan', price: '₹85', type: 'veg' },
+    { name: 'Cheese Naan', price: '₹90', type: 'veg' },
+    { name: 'Cheese Garlic Naan', price: '₹100', type: 'veg' },
+    { name: 'Naan Kheema', price: '₹130', type: 'nonveg' },
+    { name: 'Green Salad', price: '₹90', type: 'veg' },
+    { name: 'Caesar Salad', price: '₹145', type: 'veg' },
+    { name: 'Smoked Salad', price: '₹145', type: 'veg' },
+    { name: 'Russian Salad', price: '₹145', type: 'veg' },
+    { name: 'Papad', price: '₹25', type: 'veg' },
+    { name: 'Fry Papad', price: '₹35', type: 'veg' },
+    { name: 'Masala Papad', price: '₹70', type: 'veg' },
+    { name: 'Plain Curd', price: '₹60', type: 'veg' },
+    { name: 'Boondi Raita', price: '₹80', type: 'veg' },
+  ],
+  'desserts': [
+    { name: 'Haleem Single', price: '₹400', type: 'nonveg' },
+    { name: 'Haleem Full', price: '₹800', type: 'nonveg' },
+    { name: 'Shadab Special Haleem', price: '₹900', type: 'nonveg' },
+    { name: 'Lassi', price: '₹140', type: 'veg' },
+    { name: 'Faluda', price: '₹140', type: 'veg' },
+    { name: 'Qubani Sweet', price: '₹95', type: 'veg' },
+    { name: 'Kaddu Ki Kheer', price: '₹160', type: 'veg' },
+    { name: 'Apricot Delight', price: '₹159', type: 'veg' },
+    { name: 'Shikampur (Friday Special)', price: '₹80', type: 'nonveg' },
+    { name: 'Bagara Khana Dalcha (Friday Special)', price: '₹240', type: 'nonveg' },
+    { name: 'Tea', price: '₹40', type: 'veg' },
+    { name: 'Coffee', price: '₹60', type: 'veg' },
+    { name: 'Mineral Water', price: '₹20', type: 'veg' },
+    { name: 'Coca-Cola / Fanta / Sprite / Maaza', price: '₹25', type: 'veg' },
+    { name: 'Can (Thums Up)', price: '₹40', type: 'veg' },
+    { name: 'Lemon Goli Soda', price: '₹60', type: 'veg' },
+    { name: 'Jeera Goli Soda', price: '₹60', type: 'veg' },
+  ],
+};
+
+function showTab(tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  renderMenu(tab);
+}
+
+function renderMenu(tab) {
+  const items = menuData[tab] || [];
+  const grid = document.getElementById('menu-grid');
+  grid.innerHTML = items.map(item => `
+    <div class="menu-item">
+      <div>
+        <div class="menu-item-name">
+          <span class="${item.type === 'veg' ? 'veg-dot' : 'nonveg-dot'}">●</span>
+          ${item.name}
+        </div>
+      </div>
+      <div class="menu-item-price">${item.price}</div>
+    </div>
+  `).join('');
+}
+
+renderMenu('starters');
+
+// Set min date on date input to today
+const dateInput = document.querySelector('input[name="date"]');
+if (dateInput) {
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.setAttribute('min', today);
+}
+
+function submitReservation(e) {
+  e.preventDefault();
+  document.getElementById('reservation-success').style.display = 'flex';
+  document.getElementById('reservation-form').reset();
+}
+</script>
+</body>
+</html>
